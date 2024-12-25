@@ -1,8 +1,46 @@
-# React + Vite
+# **My Portfolio** 🎨
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 **Live Demo**: [Visit my Portfolio](https://ankit-gusain.github.io/my-portfolio/)  
+ 
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## **About the Project** 📖
+
+This is my personal portfolio website showcasing:
+- **My Projects** 🛠️
+- **Tech Stack** 💻
+- **Contact Information** 📧  
+Built with a focus on modern design, responsiveness, and performance.
+
+---
+
+## **Features** ✨
+- Fully responsive design for all devices.
+- Interactive animations powered by modern frameworks.
+- Dynamic project gallery.
+- Contact form integration.
+
+---
+
+## **Tech Stack** 🛠️
+
+![HTML5](https://img.shields.io/badge/-HTML5-E34F26?logo=html5&logoColor=white&style=for-the-badge)
+![CSS3](https://img.shields.io/badge/-CSS3-1572B6?logo=css3&logoColor=white&style=for-the-badge)
+![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?logo=javascript&logoColor=black&style=for-the-badge)
+![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=black&style=for-the-badge)
+![TailwindCSS](https://img.shields.io/badge/-TailwindCSS-38B2AC?logo=tailwindcss&logoColor=white&style=for-the-badge)
+
+---
+
+## **Getting Started** 🚀
+
+### Prerequisites
+- Node.js and npm installed.
+
+### Clone and Run Locally
+```bash
+git clone https://github.com/ankit-gusain/my-portfolio.git
+cd my-portfolio
+npm install
+npm run dev
