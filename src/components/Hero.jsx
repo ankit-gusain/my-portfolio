@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import profilepic from "../assets/profpic.png";
 import { TypeAnimation } from "react-type-animation";
 import ShinyEffect from "./ShinyEffect";
@@ -10,6 +10,7 @@ import {
 import {
   DiCss3,
   DiHtml5,
+  DiJava,
   DiJavascript1,
   DiNodejsSmall,
   DiReact,
@@ -26,17 +27,20 @@ const Hero = () => {
   };
 
   return (
-    <div className="mt-48 max-w-[1200px] mx-auto relative px-6 ">
-      {/* Centered Image */}
-      <motion.div
-        className="flex justify-center pe-48"
-        initial={{ opacity: 0, scale: 0.8 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1 }}
-      >
-        <img src={profilepic} className="w-[300px] md:w-[450px] mx-auto" />
-      </motion.div>
+    <div>
+      <div className="mt-48 max-w-[1200px] mx-auto relative px-6 me-20">
+        {/* Centered Image */}
+        <motion.div
+          className="flex justify-center items-center" // Ensure both horizontal and vertical centering
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+        >
+          <img src={profilepic} className="w-[300px] md:w-[450px] mx-auto" />
+        </motion.div>
+      </div>
+
 
       {/* Content Below Image */}
       <motion.div
@@ -115,14 +119,17 @@ const Hero = () => {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 1, delay: 2 }}
-        className="flex flex-row text-7xl px-12 md:px-0 w-full justify-center items-center py-24"
+        className="flex flex-wrap justify-center items-center py-24 px-12 md:px-0 w-full"
       >
-        <p className="text-gray-200 mr-6">My Tech Stack</p>
-        <DiHtml5 className="text-orange-600 mx-2" />
-        <DiCss3 className="text-blue-600 mx-2" />
-        <DiJavascript1 className="text-yellow-500 mx-2" />
-        <DiReact className="text-blue-500 mx-2" />
-        <DiNodejsSmall className="text-green-500 mx-2" />
+        <p className="text-gray-200 text-2xl md:text-4xl text-center mb-6 md:mb-0">My Tech Stack</p>
+        <div className="flex flex-wrap justify-center items-center">
+          <DiHtml5 className="text-orange-600 mx-2 text-5xl md:text-7xl" />
+          <DiCss3 className="text-blue-600 mx-2 text-5xl md:text-7xl" />
+          <DiJavascript1 className="text-yellow-500 mx-2 text-5xl md:text-7xl" />
+          <DiReact className="text-blue-500 mx-2 text-5xl md:text-7xl" />
+          <DiNodejsSmall className="text-green-500 mx-2 text-5xl md:text-7xl" />
+          <DiJava className="text-orange-600 mx-2 text-5xl md:text-7xl" />
+        </div>
       </motion.div>
 
       {/* Shiny Effect */}
@@ -131,27 +138,29 @@ const Hero = () => {
       </div>
 
       {/* Resume Modal */}
-      {showResume && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-          <div className="bg-white p-8 rounded-lg max-w-[800px] w-full">
-            <h2 className="text-xl font-semibold mb-4">My Resume</h2>
-            <iframe
-              src="https://drive.google.com/file/d/1HGUkX9_4hxfDn5E-n-4RIWMxADlnCnh8/preview"
-              width="100%"
-              height="500"
-              allow="autoplay"
-              className="mb-4"
-            />
-            <button
-              onClick={handleShowResume}
-              className="mt-4 px-6 py-2 bg-purple-500 text-white rounded-xl"
-            >
-              Close
-            </button>
+      {
+        showResume && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+            <div className="bg-white p-8 rounded-lg max-w-[800px] w-full">
+              <h2 className="text-xl font-semibold mb-4">My Resume</h2>
+              <iframe
+                src="https://drive.google.com/file/d/1pAy3Px5QzSB1SBCzNxUkHjiMXeyfP3S4/view?usp=sharing"
+                width="100%"
+                height="500"
+                allow="autoplay"
+                className="mb-4"
+              />
+              <button
+                onClick={handleShowResume}
+                className="mt-4 px-6 py-2 bg-purple-500 text-white rounded-xl"
+              >
+                Close
+              </button>
+            </div>
           </div>
-        </div>
-      )}
-    </div>
+        )
+      }
+    </div >
   );
 };
 

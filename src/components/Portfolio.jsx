@@ -1,16 +1,22 @@
-import React from 'react';
 import project1 from "../assets/project1.png";
 import project2 from "../assets/project2.png";
 import project4 from "../assets/project4.png";
-import project5 from "../assets/project5.png";
 import project6 from "../assets/project6.png";
-import { AiOutlineGithub } from 'react-icons/ai';
+import a1 from "../assets/a1.png";
 import Reveal from './Reveal';
 
 const projects = [
   {
-    img: project6,
+    img: a1,
     title: "Project #1",
+    description: "GlobeHub",
+    links: {
+      github: "https://github.com/ankit-gusain/GlobeHub",
+    },
+  },
+  {
+    img: project6,
+    title: "Project #2",
     description: "Banking Management System",
     links: {
       github: "https://github.com/ankit-gusain/banking-management-system",
@@ -18,7 +24,7 @@ const projects = [
   },
   {
     img: project2,
-    title: "Project #2",
+    title: "Project #3",
     description: "Collection of mini projects",
     links: {
       github: "https://github.com/ankit-gusain/js-and-projects",
@@ -26,7 +32,7 @@ const projects = [
   },
   {
     img: project1,
-    title: "Project #3",
+    title: "Project #4",
     description: "WearSimulator-X (Virtual Shirt try-On).",
     links: {
       github: "https://github.com/ankit-gusain/ankit-and-pypy",
@@ -34,7 +40,7 @@ const projects = [
   },
   {
     img: project4,
-    title: "Project #4",
+    title: "Project #5",
     description: "University Management System ",
     links: {
       github: "https://github.com/ankit-gusain/university-management-system",
@@ -44,37 +50,38 @@ const projects = [
 
 const Portfolio = () => {
   return (
-    <div className='max-w-[1000px] mx-auto p-6 md:my-20' id="portfolio">
-
+    <div className="max-w-[1000px] mx-auto p-6 md:my-20" id="portfolio">
       <div className="mb-8 flex flex-col items-center text-center">
-        <h3 className="text-5xl font-bold text-gray-300 mb-4 ">
+        <h3 className="text-5xl font-bold text-gray-300 mb-4">
           Port <span className="text-primary-color">folio</span>
         </h3>
         <hr className="border-t-2 border-primary-color w-32 mx-auto mb-6" />
       </div>
-      {projects.map((project, index) => (
-        <Reveal key={index}>
-          <div className={`flex flex-col md:flex-row ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''} mb-12`}>
-            <div className='w-full md:w-1/2 p-4'>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        {projects.map((project, index) => (
+          <Reveal key={index}>
+            <div className="group relative flex flex-col justify-center items-center bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+              {/* Image with Hover Effect */}
               <img
                 src={project.img}
                 alt={project.title}
-                className='w-full h-full object-cover rounded-lg shadow-lg'
+                className="w-full h-64 object-cover transition duration-300 ease-in-out group-hover:blur-sm"
               />
-            </div>
-            <div className='w-full md:w-1/2 p-4 flex flex-col justify-center'>
-              <h3 className='text-2xl font-semibold text-gray-200 mb-4'>{project.title}</h3>
-              <p className='text-gray-300 mb-4'>{project.description}</p>
-              <div className='flex justify-center'>
-                <a href={project.links.github}
-                  className='px-4 py-2 bg-slate-600 text-gray-200 rounded-lg hover:bg-slate-700 transition duration-300'>
-                  <AiOutlineGithub className="text-3xl" />
-                </a>
+              {/* Hover Content (Info Box) */}
+              <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 flex justify-center items-center p-4 transition-opacity duration-300">
+                <p className="text-white text-center">{project.description}</p>
               </div>
+              {/* Link to GitHub */}
+              <a
+                href={project.links.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute inset-0"
+              ></a>
             </div>
-          </div>
-        </Reveal>
-      ))}
+          </Reveal>
+        ))}
+      </div>
     </div>
   );
 };
